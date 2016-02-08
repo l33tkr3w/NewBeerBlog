@@ -1,5 +1,6 @@
 <?php
 require('host.php');
+require('login.php');
 require('user_registration.php');
 ?>
 
