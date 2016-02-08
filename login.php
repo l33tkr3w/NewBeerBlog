@@ -1,7 +1,7 @@
 <?php
 
 
-//print_r($_SESSION['LoginStatus']);
+print_r($_SESSION['LoginStatus']);
 
 if (isset($_POST['email'])) {
     echo "Login true <br><br>";
