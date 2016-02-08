@@ -33,6 +33,14 @@ require('user_registration.php');
         }
     </style>
 
+    <script>
+        setTimeout(removeVideo, 40000);
+        function removeVideo(){
+            document.getElementById('videoContain').innerHTML = '<br>';
+            
+        } 
+    </script>
+    
     <body>
 
         <!-- NAVBAR -->
@@ -77,41 +85,26 @@ require('user_registration.php');
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <?php
-                                //HIDE LOGIN BUTTON ONCE LOGGED IN
-                                if (isset($_POST['firstname'])) {
-                                    
-                                } else {
-                                    echo('<a href="" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-                            <ul id="login-dp" class="dropdown-menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-12" >  
-                                            
-                                            <form class="form" role="form" method="post" action="" accept-charset="UTF-8" id="login-nav">
+                        if (isset($_POST['firstname'])) {                        
+                        }else{
+                            echo('<ul class="nav navbar-nav">
 
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="Username">Login</label>
-                                                    <input type="text" class="form-control" id="email" placeholder="Email Address" required>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="Password">Password</label>
-                                                    <input type="password" class="form-control" id="Password" placeholder="Password" required>                                                
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
-                                                </div>   
-
-                                            </form>
-
-                                        </div>                                      
-                                    </div>
-                                </li>
-                            </ul>');
-                                }
-                                   
-                                ?>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>   
+                                <form class="form" role="form" method="post" action="" accept-charset="UTF-8" id="login-nav">
+                                    <input type="text" class="form-control" id="email" placeholder="Email Address" required />
+                                    <input type="text" class="form-control" id="password" placeholder="Password">
+                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                    </form>
+                                </li>                                  
+                            </ul>
+                        </li>
+                        </ul>  
+                    </ul>');                          
+                        }
+                        ?>
 
                             </li>
 
@@ -205,8 +198,8 @@ require('user_registration.php');
     </div>
 
 
-    <div class="container">
-        <div class="video">
+    <div class="container" >
+        <div class="video" id="videoContain">
             <div class="responsive-video">
                 <video id="player" autoplay loop src="beer.mp4" height="100%" ></video>
             </div>
