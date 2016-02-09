@@ -35,12 +35,12 @@ require('user_registration.php');
 
     <script>
         setTimeout(removeVideo, 40000);
-        function removeVideo(){
+        function removeVideo() {
             document.getElementById('videoContain').innerHTML = '<br>';
-            
-        } 
+
+        }
     </script>
-    
+
     <body>
 
         <!-- NAVBAR -->
@@ -58,6 +58,38 @@ require('user_registration.php');
 
                 <div class="navbar-collapse collapse navbar-right">
                     <ul class="nav navbar-nav">
+
+                        <ul class="nav navbar-nav">
+
+                            <li class="dropdown">
+                                <a href="" class="dropdown-toggle " data-toggle="dropdown">Support <b class="caret"></b></a>
+                                
+                                <ul class="dropdown-menu" id="supportButtonDD">
+                                    
+                                    <li>   
+
+
+                                        <script>
+
+                                            function displayAbout() {
+                                                document.getElementById('supportButtonDD').innerHTML = "ABOUT INFORMATION HTML HERE" + '<button onclick="displayContact()" type="" id="contactButton" class="btn btn-theme btn-block ">Contact</button>';
+                                            }
+
+                                            function displayContact() {
+                                                document.getElementById('supportButtonDD').innerHTML = "CONTACT FORM HTML HERE";
+                                            }
+                                        </script>
+
+                                        <button onclick="displayAbout()" id="aboutButton" class="btn btn-theme btn-block">About</button>
+                                        <button onclick="displayContact()" type="" id="contactButton" class="btn btn-theme btn-block ">Contact</button>
+
+                                    </li> 
+                                  
+                                </ul>
+                                    
+                            </li>
+                        </ul>  
+
 
                         <?php
                         if (isset($_POST['firstname'])) {
@@ -85,9 +117,10 @@ require('user_registration.php');
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <?php
-                        if (isset($_POST['firstname'])) {                        
-                        }else{
-                            echo('<ul class="nav navbar-nav">
+                                if (isset($_POST['firstname'])) {
+                                    
+                                } else {
+                                    echo('<ul class="nav navbar-nav">
 
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
@@ -102,9 +135,9 @@ require('user_registration.php');
                             </ul>
                         </li>
                         </ul>  
-                    </ul>');                          
-                        }
-                        ?>
+                    </ul>');
+                                }
+                                ?>
 
                             </li>
 
