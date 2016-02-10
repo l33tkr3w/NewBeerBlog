@@ -71,22 +71,21 @@ require('user_registration.php');
                                         
                                         
                                         <script>
-
                                             function displayAbout() {
-                                                document.getElementById('aboutPlaceholder').innerHTML = "ABOUT INFORMATION HTML HERE";
+                                                document.getElementById('aboutPlaceholder').innerHTML = "ABOUT INFORMATION";
                                                 document.getElementById('contactPlaceholder').innerHTML = "";                                               
                                             }
 
                                             function displayContact() {
-                                                document.getElementById('contactPlaceholder').innerHTML = "CONTACT FORM HTML HERE";
+                                                document.getElementById('contactPlaceholder').innerHTML = "CONTACT FORM";
                                                 document.getElementById('aboutPlaceholder').innerHTML = "";
                                             }
                                         </script>
 
-                                        <button onclick="displayAbout()" id="aboutButton" class="btn btn-theme btn-block">About</button>
-                                        <p id="aboutPlaceholder"></p>
+                                        <button onclick="displayAbout()"  id="aboutButton" class="btn btn-theme btn-block">About</button>
+                                        <p id="aboutPlaceholder" style="color:yellow" class="text-primary"></p>
                                         <button onclick="displayContact()" type="" id="contactButton" class="btn btn-theme btn-block ">Contact</button>
-                                        <p id="contactPlaceholder"></p>
+                                        <p id="contactPlaceholder" style="color:yellow" class="text-primary"></p>
 
                                     </li> 
 
