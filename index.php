@@ -65,16 +65,12 @@ require('post.php');
 
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle " data-toggle="dropdown">Support <b class="caret"></b></a>
-
                                 <ul class="dropdown-menu" id="supportButtonDD">
-
                                     <li>   
 
-                                        
-                                        
                                         <script>
                                             function displayAbout() {
-                                                document.getElementById('aboutPlaceholder').innerHTML = "I like beer, what more can I say?";
+                                                document.getElementById('aboutPlaceholder').innerHTML = "<I like beer, what more can I say?";
                                                 document.getElementById('contactPlaceholder').innerHTML = "";                                               
                                             }
 
@@ -90,12 +86,9 @@ require('post.php');
                                         <p id="contactPlaceholder" style="color:yellow" class="text-primary"></p>
 
                                     </li> 
-
                                 </ul>
-
                             </li>
                         </ul>  
-
 
                         <?php
                         if (isset($_POST['firstname'])) {
@@ -118,7 +111,6 @@ require('post.php');
                     </ul>');
                         }
                         ?>
-
 
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
@@ -309,6 +301,7 @@ require('post.php');
             </div>
         </div>
     </div>
+   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

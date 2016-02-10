@@ -1,14 +1,12 @@
 <?php
-
 $sql_selectEdit = "SELECT email, title, textContent, image, removable, user_ID "
         . " FROM tbl_articles "
         . " ORDER BY title";
 
 $result_edit = $pdo->query($sql_selectEdit);
-$Article;
 
-while ($row = $result_edit->fetch()) {
-    $Article = 'echo("<div class="well">
+while ($row = mysql_fetch_assoc($result_edit)) {
+    $Article += 'echo("<div class="well">
 
             <h4 class="media-heading">' .  $row['title'] . '</h4>
 
@@ -26,5 +24,3 @@ while ($row = $result_edit->fetch()) {
       
 }
 echo($Article);
-
-?>
