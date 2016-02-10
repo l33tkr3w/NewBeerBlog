@@ -68,20 +68,25 @@ require('user_registration.php');
 
                                     <li>   
 
-
+                                        
+                                        
                                         <script>
 
                                             function displayAbout() {
-                                                document.getElementById('supportButtonDD').innerHTML = "ABOUT INFORMATION HTML HERE" + '<button onclick="displayContact()" type="" id="contactButton" class="btn btn-theme btn-block ">Contact</button>';
+                                                document.getElementById('aboutPlaceholder').innerHTML = "ABOUT INFORMATION HTML HERE";
+                                                document.getElementById('contactPlaceholder').innerHTML = "";                                               
                                             }
 
                                             function displayContact() {
-                                                document.getElementById('supportButtonDD').innerHTML = "CONTACT FORM HTML HERE" + '<button onclick="displayAbout()" id="aboutButton" class="btn btn-theme btn-block">About</button>';
+                                                document.getElementById('contactPlaceholder').innerHTML = "CONTACT FORM HTML HERE";
+                                                document.getElementById('aboutPlaceholder').innerHTML = "";
                                             }
                                         </script>
 
                                         <button onclick="displayAbout()" id="aboutButton" class="btn btn-theme btn-block">About</button>
+                                        <p id="aboutPlaceholder"></p>
                                         <button onclick="displayContact()" type="" id="contactButton" class="btn btn-theme btn-block ">Contact</button>
+                                        <p id="contactPlaceholder"></p>
 
                                     </li> 
 

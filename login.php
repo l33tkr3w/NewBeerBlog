@@ -13,7 +13,7 @@ if (isset($_POST['email'])) {
 
     $li_result = $sqlh_li->fetch();
     $hash = $li_result['password'];
-    $test = "TEST!";
+    $test = "<h3>TEST!</h3>";
 
     if (password_verify($_POST['password'], $hash)) {
         echo 'Password is valid!';
