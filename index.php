@@ -63,9 +63,9 @@ require('user_registration.php');
 
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle " data-toggle="dropdown">Support <b class="caret"></b></a>
-                                
+
                                 <ul class="dropdown-menu" id="supportButtonDD">
-                                    
+
                                     <li>   
 
 
@@ -76,7 +76,7 @@ require('user_registration.php');
                                             }
 
                                             function displayContact() {
-                                                document.getElementById('supportButtonDD').innerHTML = "CONTACT FORM HTML HERE";
+                                                document.getElementById('supportButtonDD').innerHTML = "CONTACT FORM HTML HERE" + '<button onclick="displayAbout()" id="aboutButton" class="btn btn-theme btn-block">About</button>';
                                             }
                                         </script>
 
@@ -84,9 +84,9 @@ require('user_registration.php');
                                         <button onclick="displayContact()" type="" id="contactButton" class="btn btn-theme btn-block ">Contact</button>
 
                                     </li> 
-                                  
+
                                 </ul>
-                                    
+
                             </li>
                         </ul>  
 
@@ -103,7 +103,7 @@ require('user_registration.php');
                                     <input type="text" class="form-control" id="Title" placeholder="Title" required />
                                     <textarea class="FormElement" name="term" id="term" cols="36" rows="7" placeholder="Article Text"></textarea>
                                     <input type="text" class="form-control" id="Image" placeholder="Enter an Image URL">
-                                    <button type="submit" class="btn btn-primary btn-block">POST ARTICLE</button>
+                                    <button type="submit" class="btn btn-theme btn-block">Post</button>
                                     </form>
                                 </li>                                  
                             </ul>
@@ -128,8 +128,8 @@ require('user_registration.php');
                                 <li>   
                                 <form class="form" role="form" method="post" action="" accept-charset="UTF-8" id="login-nav">
                                     <input type="text" class="form-control" id="email" placeholder="Email Address" required />
-                                    <input type="text" class="form-control" id="password" placeholder="Password">
-                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                    <input type="text" class="form-control" id="password" placeholder="Password">                                  
+                                    <button type="submit" class="btn btn-theme btn-block">Login</button>
                                     </form>
                                 </li>                                  
                             </ul>
@@ -210,7 +210,7 @@ require('user_registration.php');
                                                             <tr>
                                                                 <td colspan="2" style="text-align:center">
                                                                     <div class="form-group">                                                                           
-                                                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                                                        <button type="submit" class="btn btn-theme btn-block">Submit</button>
                                                                     </div>   
                                                                 </td>
                                                             </tr>
