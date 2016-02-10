@@ -2,6 +2,8 @@
 require('host.php');
 require('login.php');
 require('user_registration.php');
+require('createPost.php');
+require('post.php');
 ?>
 
 <html lang="en">
@@ -72,7 +74,7 @@ require('user_registration.php');
                                         
                                         <script>
                                             function displayAbout() {
-                                                document.getElementById('aboutPlaceholder').innerHTML = "ABOUT INFORMATION";
+                                                document.getElementById('aboutPlaceholder').innerHTML = "I like beer, what more can I say?";
                                                 document.getElementById('contactPlaceholder').innerHTML = "";                                               
                                             }
 
@@ -104,9 +106,9 @@ require('user_registration.php');
                             <ul class="dropdown-menu">
                                 <li>   
                                 <form class="form" role="form" method="post" action="" accept-charset="UTF-8" id="login-nav">
-                                    <input type="text" class="form-control" id="Title" placeholder="Title" required />
-                                    <textarea class="FormElement" name="term" id="term" cols="36" rows="7" placeholder="Article Text"></textarea>
-                                    <input type="text" class="form-control" id="Image" placeholder="Enter an Image URL">
+                                    <input type="text" class="form-control" name="title" id="title" placeholder="Title" required />
+                                    <textarea class="FormElement" name="textContent" name="textContent "id="textContent" cols="36" rows="7" placeholder="Article Text"></textarea>
+                                    <input type="text" class="form-control" name="image" id="image" placeholder="Enter an Image URL">
                                     <button type="submit" class="btn btn-theme btn-block">Post</button>
                                     </form>
                                 </li>                                  
@@ -131,8 +133,8 @@ require('user_registration.php');
                             <ul class="dropdown-menu">
                                 <li>   
                                 <form class="form" role="form" method="post" action="" accept-charset="UTF-8" id="login-nav">
-                                    <input type="text" class="form-control" id="email" placeholder="Email Address" required />
-                                    <input type="text" class="form-control" id="password" placeholder="Password">                                  
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email Address" required />
+                                    <input type="text" class="form-control" name="password" id="password" placeholder="Password">                                  
                                     <button type="submit" class="btn btn-theme btn-block">Login</button>
                                     </form>
                                 </li>                                  
