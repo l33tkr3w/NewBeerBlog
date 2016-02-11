@@ -70,7 +70,7 @@ require('post.php');
 
                                         <script>
                                             function displayAbout() {
-                                                document.getElementById('aboutPlaceholder').innerHTML = "<I like beer, what more can I say?";
+                                                document.getElementById('aboutPlaceholder').innerHTML = "I like beer, what more can I say?";
                                                 document.getElementById('contactPlaceholder').innerHTML = "";                                               
                                             }
 
@@ -143,7 +143,7 @@ require('post.php');
                             <li class="dropdown">
 
                                 <!--SET STATUS OF USER, SIGNED IN OR OUT-->
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown"><b><?php echo($loginStatus); ?></b> <span class="caret"></span></a>
+                                <a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown">Register <span class="caret"></span></a>
 
                                 <!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
                                 <?php

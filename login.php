@@ -17,6 +17,7 @@ if (isset($_POST['email'])) {
 
     if (password_verify($_POST['password'], $hash)) {
         echo 'Password is valid!';
+        echo('');
         $_SESSION['LoginStatus'] = true;
         
     } else {
