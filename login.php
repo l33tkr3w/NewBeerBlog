@@ -23,6 +23,9 @@ if (isset($_POST['email'])) {
         $_SESSION['LoginStatus'] = true;
         $Status = 'Logoff ' . $_POST['email'];
         
+        if($Status = 'Logoff ' . 'Admin'){
+            $Admin = true;
+        }
         
     } else {
         echo 'Invalid password.';

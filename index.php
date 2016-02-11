@@ -5,6 +5,8 @@ require('user_registration.php');
 require('createPost.php');
 ?>
 
+
+
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -281,8 +283,6 @@ require('createPost.php');
         ?>
         
     </div>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/retina-1.1.0.js"></script>
@@ -291,6 +291,7 @@ require('createPost.php');
     <script src="assets/js/jquery.prettyPhoto.js"></script>
     <script src="assets/js/jquery.isotope.min.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script type="text/javascript"></script>
 
 </body>
 </html>

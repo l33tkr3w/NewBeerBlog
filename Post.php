@@ -16,6 +16,8 @@ while ($row = $result_edit->fetch()) {
             . '</p><p>'
             . $row['textContent'] 
             . '</p></div></div></div>"';
+    
+    
     echo($Article);
 }
 
