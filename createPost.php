@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['textContent'])) {
-print_r($_POST);
+
     //create sql statement
     $sql_stmt = "INSERT INTO tbl_Articles "
             . "(email, "
@@ -27,11 +27,11 @@ print_r($_POST);
     $in_removable = filter_var($_POST['removable'], FILTER_SANITIZE_STRING);
 
     //bind the parameters
-    $sqlh->bindparam(":email", $in_firstname);
-    $sqlh->bindparam(":title", $in_lastname);
-    $sqlh->bindparam(":textContent", $in_email);
-    $sqlh->bindparam(":image", $in_address);
-    $sqlh->bindparam(":removable", $in_city);
+    $sqlh->bindparam(":email", $in_email);
+    $sqlh->bindparam(":title", $in_title);
+    $sqlh->bindparam(":textContent", $in_textContent);
+    $sqlh->bindparam(":image", $in_image);
+    $sqlh->bindparam(":removable", $in_removable);
 
     //excecute the sqlstatement
     $sqlh->execute();

@@ -1,5 +1,8 @@
 <?php
 
+//default register button title
+$Status = 'Register';
+
 if (isset($_POST['email'])) {
 
     $sql_li_stmt = "Select email, password "
@@ -16,9 +19,10 @@ if (isset($_POST['email'])) {
     $hash = $li_result['password'];
 
     if (password_verify($_POST['password'], $hash)) {
-        echo 'Password is valid!';
-        echo('');
+        echo 'Password is valid!';  
         $_SESSION['LoginStatus'] = true;
+        $Status = 'Logoff ' . $_POST['email'];
+        
         
     } else {
         echo 'Invalid password.';

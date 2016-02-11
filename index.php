@@ -3,7 +3,6 @@ require('host.php');
 require('login.php');
 require('user_registration.php');
 require('createPost.php');
-require('post.php');
 ?>
 
 <html lang="en">
@@ -70,20 +69,25 @@ require('post.php');
 
                                         <script>
                                             function displayAbout() {
-                                                document.getElementById('aboutPlaceholder').innerHTML = "I like beer, what more can I say?";
-                                                document.getElementById('contactPlaceholder').innerHTML = "";                                               
+                                                document.getElementById('aboutPlaceholder').innerHTML = '<div class="well"> what more can I say? <br>I like beer.</div>';
+                                                document.getElementById('contactPlaceholder').innerHTML = "";
                                             }
 
                                             function displayContact() {
-                                                document.getElementById('contactPlaceholder').innerHTML = "CONTACT FORM";
+                                                document.getElementById('contactPlaceholder').innerHTML = '<form  action="" method="POST">' +
+                                                        '<input name="name" class="form-control" type="text" placeholder="Name"/>' +
+                                                        '<input name="email" class="form-control" type="text" placeholder="Email Address" value="""/>' +
+                                                        '<textarea name="message" class="form-control" cols="36" rows="7" placeholder="Please enter your message here"></textarea>' +
+                                                        '<button type="submit" class="btn btn-theme btn-block">Send</button>' +
+                                                        '</form>';
                                                 document.getElementById('aboutPlaceholder').innerHTML = "";
                                             }
                                         </script>
 
                                         <button onclick="displayAbout()"  id="aboutButton" class="btn btn-theme btn-block">About</button>
-                                        <p id="aboutPlaceholder" style="color:yellow" class="text-primary"></p>
+                                        <p id="aboutPlaceholder" class="text-primary"></p>
                                         <button onclick="displayContact()" type="" id="contactButton" class="btn btn-theme btn-block ">Contact</button>
-                                        <p id="contactPlaceholder" style="color:yellow" class="text-primary"></p>
+                                        <p id="contactPlaceholder" class="text-primary"></p>
 
                                     </li> 
                                 </ul>
@@ -143,7 +147,7 @@ require('post.php');
                             <li class="dropdown">
 
                                 <!--SET STATUS OF USER, SIGNED IN OR OUT-->
-                                <a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown">Register <span class="caret"></span></a>
+                                <a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown"><?php echo($Status); ?> <span class="caret"></span></a>
 
                                 <!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
                                 <?php
@@ -250,22 +254,7 @@ require('post.php');
                 <div class="media-body">               
                     <p class="text-right">Username</p>
                     <p>Random blog post</p>
-                    <ul class="list-inline list-unstyled">
-                        <li><span><i class="glyphicon glyphicon-calendar"></i> Time Posted </span></li>
-                        <li>|</li>
-                        <span><i class="glyphicon glyphicon-comment"></i> Comments </span>
-                        <li>|</li>
-                        <li>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </li>
-                        <li>|</li>
-                        <li>
-
-                        </li>
+                    <ul class="list-inline list-unstyled">                      
                     </ul>
                 </div>
             </div>
@@ -281,27 +270,18 @@ require('post.php');
                     <p class="text-right">Username</p>
                     <p>Random blog post</p>
                     <ul class="list-inline list-unstyled">
-                        <li><span><i class="glyphicon glyphicon-calendar"></i> Time Posted </span></li>
-                        <li>|</li>
-                        <span><i class="glyphicon glyphicon-comment"></i> Comments </span>
-                        <li>|</li>
-                        <li>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </li>
-                        <li>|</li>
-                        <li>
 
-                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <?php
+        include('post.php');
+        ?>
+        
     </div>
-   
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
