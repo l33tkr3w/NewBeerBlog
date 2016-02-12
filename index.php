@@ -156,6 +156,7 @@ require('createPost.php');
                                 if (isset($_POST['firstname'])) {
                                     
                                 } else {
+                                    
                                     echo('<ul id="login-dp" class="dropdown-menu">
                                 <li>
                                     <div class="row">
@@ -226,6 +227,7 @@ require('createPost.php');
                                 </li>
                             </ul>');
                                 }
+                                
                                 ?>
                             </li>
                         </ul>
@@ -280,6 +282,7 @@ require('createPost.php');
 
         <?php
         include('post.php');
+        
         ?>
         
     </div>

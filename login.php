@@ -23,8 +23,10 @@ if (isset($_POST['email'])) {
         $_SESSION['LoginStatus'] = true;
         $Status = 'Logoff ' . $_POST['email'];
         
-        if($Status = 'Logoff ' . 'Admin'){
+        if($_POST['email'] = 'admin@gmail.com'){
             $Admin = true;
+            $Status = 'Logoff Admin';
+            
         }
         
     } else {
