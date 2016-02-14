@@ -123,7 +123,7 @@ require('createPost.php');
                                 <?php
                                 if (isset($_POST['firstname'])) {
                                     
-                                } else {
+                                } else if ($loginStatus = true) {
                                     echo('<ul class="nav navbar-nav">
 
                         <li class="dropdown">
@@ -148,15 +148,22 @@ require('createPost.php');
                             <!-- USER REGISTRATION DROPDOWN, Shows user registration drop down menu. -->
                             <li class="dropdown">
 
+                                
                                 <!--SET STATUS OF USER, SIGNED IN OR OUT-->
-                                <a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown"><?php echo($Status); ?> <span class="caret"></span></a>
-
+                                <?php
+                                if($loginStatus = true){
+                                    echo('<a href="" class="dropdown-toggle" action="index.php" id="registerBttn" data-toggle="dropdown">' . $Status . '<span class="caret"></span></a>');
+                                }else{
+                                    echo('<a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown">' . $Status . '<span class="caret"></span></a>');
+                                }
+                                ?>
+                                
                                 <!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
                                 <?php
                                 if (isset($_POST['firstname'])) {
                                     
                                 } else {
-                                    
+
                                     echo('<ul id="login-dp" class="dropdown-menu">
                                 <li>
                                     <div class="row">
@@ -227,7 +234,6 @@ require('createPost.php');
                                 </li>
                             </ul>');
                                 }
-                                
                                 ?>
                             </li>
                         </ul>
@@ -280,11 +286,10 @@ require('createPost.php');
             </div>
         </div>
 
-        <?php
-        include('post.php');
-        
-        ?>
-        
+<?php
+include('post.php');
+?>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
