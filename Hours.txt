@@ -21,14 +21,11 @@ Fixed buttons on navbar | 2
 TROUBLESHOOTING | 5 HOURS
 Currently need to fix "invalid password" | 1 hour estimated
 Need Delete button DELETE STATEMENT FROM DB | 1 hour estimated
-
-
+Wrote DELETE STATEMENT for delete button. | 1 - Still not working properly
+"invalid password" still occuring as of last few updates. (login.php line 22, password is undefined.)
 ________________________________________________________________________________
 
-
-
-
-________________________________________________________________________________
+____________________________________________________________________________
 Greg
 ________________________________________________________________________________
 Database User registration  | 4 hours

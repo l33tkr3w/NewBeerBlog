@@ -3,7 +3,6 @@ require('host.php');
 require('login.php');
 require('user_registration.php');
 require('createPost.php');
-
 ?>
 
 
@@ -38,18 +37,40 @@ require('createPost.php');
     </style>
 
     <script>
+        //Remove startup video after playing
         setTimeout(removeVideo, 40000);
         function removeVideo() {
             document.getElementById('videoContain').innerHTML = '<br>';
 
         }
+
+        // Set removable ID to users user_ID.  When Delete post button is clicked
+        // the value of "removable" gets set to user_ID.  
+        // When removable == $_POST['user_ID'] the DELETE statement is run.       
+        function deletePost() {
+            var postID = document.getElementById("user_ID").value;
+            document.getElementById("removable").value = postID;
+        }
+        
+        //When support buttons (about,contact) are clicked, change state.
+        function displayAbout() {
+            document.getElementById('aboutPlaceholder').innerHTML = '<div class="well"> what more can I say? <br>I like beer.</div>';
+            document.getElementById('contactPlaceholder').innerHTML = "";
+        }
+
+         //When support buttons (about,contact) are clicked, change state.
+        function displayContact() {
+            document.getElementById('contactPlaceholder').innerHTML = '<form  action="" method="POST">' +
+                    '<input name="name" class="form-control" type="text" placeholder="Name"/>' +
+                    '<input name="email" class="form-control" type="text" placeholder="Email Address" value="""/>' +
+                    '<textarea name="message" class="form-control" cols="36" rows="7" placeholder="Please enter your message here"></textarea>' +
+                    '<button type="submit" class="btn btn-theme btn-block">Send</button>' +
+                    '</form>';
+            document.getElementById('aboutPlaceholder').innerHTML = "";
+        }  
     </script>
 
     <body>
-        
-        
-
-        <!-- NAVBAR -->
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -64,36 +85,15 @@ require('createPost.php');
 
                 <div class="navbar-collapse collapse navbar-right">
                     <ul class="nav navbar-nav">
-
                         <ul class="nav navbar-nav">
-
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle " data-toggle="dropdown">Support <b class="caret"></b></a>
                                 <ul class="dropdown-menu" id="supportButtonDD">
                                     <li>   
-
-                                        <script>
-                                            function displayAbout() {
-                                                document.getElementById('aboutPlaceholder').innerHTML = '<div class="well"> what more can I say? <br>I like beer.</div>';
-                                                document.getElementById('contactPlaceholder').innerHTML = "";
-                                            }
-
-                                            function displayContact() {
-                                                document.getElementById('contactPlaceholder').innerHTML = '<form  action="" method="POST">' +
-                                                        '<input name="name" class="form-control" type="text" placeholder="Name"/>' +
-                                                        '<input name="email" class="form-control" type="text" placeholder="Email Address" value="""/>' +
-                                                        '<textarea name="message" class="form-control" cols="36" rows="7" placeholder="Please enter your message here"></textarea>' +
-                                                        '<button type="submit" class="btn btn-theme btn-block">Send</button>' +
-                                                        '</form>';
-                                                document.getElementById('aboutPlaceholder').innerHTML = "";
-                                            }
-                                        </script>
-
                                         <button onclick="displayAbout()"  id="aboutButton" class="btn btn-theme btn-block">About</button>
                                         <p id="aboutPlaceholder" class="text-primary"></p>
                                         <button onclick="displayContact()" type="" id="contactButton" class="btn btn-theme btn-block ">Contact</button>
                                         <p id="contactPlaceholder" class="text-primary"></p>
-
                                     </li> 
                                 </ul>
                             </li>
@@ -121,7 +121,6 @@ require('createPost.php');
                         </ul>  
                     </ul>');
                         }
-                        
                         ?>
 
                         <ul class="nav navbar-nav navbar-right">
@@ -146,26 +145,24 @@ require('createPost.php');
                         </ul>  
                     </ul>');
                                 }
-                                
                                 ?>
 
                             </li>
 
-                            <!-- USER REGISTRATION DROPDOWN, Shows user registration drop down menu. -->
+<!-- USER REGISTRATION DROPDOWN, Shows user registration drop down menu. -->
                             <li class="dropdown">
 
-                                
-                                <!--SET STATUS OF USER, SIGNED IN OR OUT-->
+<!--SET STATUS OF USER, SIGNED IN OR OUT-->
                                 <?php
                                 if (!isset($_POST['email'])) {
                                     echo('<a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown">Register<span class="caret"></span></a>');
-                                }else{
+                                } else {
                                     echo('<a href="index.php" class="btn btn-success" role="button">Logoff</a>');
                                     echo('');
                                 }
                                 ?>
-                                
-                                <!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
+
+<!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
                                 <?php
                                 if (!isset($_POST['email'])) {
                                     echo('<ul id="login-dp" class="dropdown-menu">
@@ -175,20 +172,17 @@ require('createPost.php');
                                             <form action=""  method="POST" >
                                                 <div class="form-group">
                                                     <div id="data">
-
                                                         <table width="350px">
                                                             <tr> 
                                                                 <td valign="top"> 
                                                                     <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
                                                                 </td>
                                                             </tr>
-
                                                             <tr>   
                                                                 <td valign="top">
                                                                     <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
                                                                 </td>
                                                             </tr>
-
                                                             <tr>  
                                                                 <td valign="top">
                                                                     <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
@@ -198,31 +192,26 @@ require('createPost.php');
                                                                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                                                                 </td>
                                                             </tr>
-
                                                             <tr>                                                                
                                                                 <td valign="top">
                                                                     <input type="text" class="form-control" id="address" name="address" placeholder="Street Address" required>
                                                                 </td>
                                                             </tr>
-
                                                             <tr>                                                              
                                                                 <td valign="top">
                                                                     <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
                                                                 </td>
                                                             </tr>
-
                                                             <tr>                                                                
                                                                 <td valign="top">
                                                                     <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
                                                                 </td>
                                                             </tr>
-
                                                             <tr>                                                               
                                                                 <td valign="top">
                                                                     <input type="text" class="form-control" id="zip" name="zip" placeholder="Zipcode" required>
                                                                 </td>
                                                             </tr>
-
                                                             <tr>
                                                                 <td colspan="2" style="text-align:center">
                                                                     <div class="form-group">                                                                           
@@ -237,9 +226,8 @@ require('createPost.php');
                                         </div>
                                 </li>
                             </ul>');
-                                }else{
+                                } else {
                                     echo('');
-                                    
                                 }
                                 ?>
                             </li>
@@ -256,13 +244,9 @@ require('createPost.php');
                 <video id="player" autoplay loop src="beer.mp4" height="100%" ></video>
             </div>
         </div>
-
         <hr>
-
         <div class="well">
-
             <h4 class="media-heading">Title</h4>
-
             <div class="media">             
                 <a>
                     <img class="img-responsive" src="assets/img/beer-color-spectrum.jpg" width="100%">
@@ -279,25 +263,21 @@ require('createPost.php');
         <div class="well">
             <h4 class="media-heading">Title</h4>
             <div class="media">
-                <a>
-                    <img class="media-object" src="assets/img/beer2.jpg">
-                </a>
+                <a><img class="media-object" src="assets/img/beer2.jpg"></a>
                 <div class="media-body">
-
                     <p class="text-right">Username</p>
                     <p>Random blog post</p>
                     <ul class="list-inline list-unstyled">
-
                     </ul>
                 </div>
             </div>
         </div>
 
-<?php
-include('post.php');
-?>
-
+        <?php
+        include('post.php');
+        ?>   
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/retina-1.1.0.js"></script>
