@@ -51,14 +51,14 @@ require('createPost.php');
             var postID = document.getElementById("user_ID").value;
             document.getElementById("removable").value = postID;
         }
-        
+
         //When support buttons (about,contact) are clicked, change state.
         function displayAbout() {
             document.getElementById('aboutPlaceholder').innerHTML = '<div class="well"> what more can I say? <br>I like beer.</div>';
             document.getElementById('contactPlaceholder').innerHTML = "";
         }
 
-         //When support buttons (about,contact) are clicked, change state.
+        //When support buttons (about,contact) are clicked, change state.
         function displayContact() {
             document.getElementById('contactPlaceholder').innerHTML = '<form  action="" method="POST">' +
                     '<input name="name" class="form-control" type="text" placeholder="Name"/>' +
@@ -67,7 +67,7 @@ require('createPost.php');
                     '<button type="submit" class="btn btn-theme btn-block">Send</button>' +
                     '</form>';
             document.getElementById('aboutPlaceholder').innerHTML = "";
-        }  
+        }
     </script>
 
     <body>
@@ -149,10 +149,10 @@ require('createPost.php');
 
                             </li>
 
-<!-- USER REGISTRATION DROPDOWN, Shows user registration drop down menu. -->
+                            <!-- USER REGISTRATION DROPDOWN, Shows user registration drop down menu. -->
                             <li class="dropdown">
 
-<!--SET STATUS OF USER, SIGNED IN OR OUT-->
+                                <!--SET STATUS OF USER, SIGNED IN OR OUT-->
                                 <?php
                                 if (!isset($_POST['email'])) {
                                     echo('<a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown">Register<span class="caret"></span></a>');
@@ -162,7 +162,7 @@ require('createPost.php');
                                 }
                                 ?>
 
-<!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
+                                <!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
                                 <?php
                                 if (!isset($_POST['email'])) {
                                     echo('<ul id="login-dp" class="dropdown-menu">
@@ -277,16 +277,38 @@ require('createPost.php');
         include('post.php');
         ?>   
     </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/retina-1.1.0.js"></script>
-    <script src="assets/js/jquery.hoverdir.js"></script>
-    <script src="assets/js/jquery.hoverex.min.js"></script>
-    <script src="assets/js/jquery.prettyPhoto.js"></script>
-    <script src="assets/js/jquery.isotope.min.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script type="text/javascript"></script>
+
+    <a href="#" class="btn btn-lg btn-success" 
+       data-toggle="modal" 
+       data-target="#basicModal">Test Button</a>
+
+    <div class="modal fade " id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title"><b>Welcome to our Beer Blog</b></h3>
+                    <div class="modal-body">
+                        <div class="responsive-video">
+                            <video id="player" autoplay loop src="beer.mp4" height="100%" ></video>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <h4 style="text-align:left">Please enjoy your stay.<br> Feel free to make a post.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/retina-1.1.0.js"></script>
+        <script src="assets/js/jquery.hoverdir.js"></script>
+        <script src="assets/js/jquery.hoverex.min.js"></script>
+        <script src="assets/js/jquery.prettyPhoto.js"></script>
+        <script src="assets/js/jquery.isotope.min.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <script type="text/javascript"></script>
 
 </body>
 </html>

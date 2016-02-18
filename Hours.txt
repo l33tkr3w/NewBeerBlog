@@ -23,6 +23,8 @@ Currently need to fix "invalid password" | 1 hour estimated
 Need Delete button DELETE STATEMENT FROM DB | 1 hour estimated
 Wrote DELETE STATEMENT for delete button. | 1 - Still not working properly
 "invalid password" still occuring as of last few updates. (login.php line 22, password is undefined.)
+Began integration of bootstrap JS Modal for Auto video playing in popup. | 1 - testing phase
+
 ________________________________________________________________________________
 
 ____________________________________________________________________________
