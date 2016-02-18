@@ -1,7 +1,11 @@
 <?php
 
 //default register button title
-$Status = 'Register';
+$Status = 'Logoff ' . $_POST['email'];
+$Admin = false;
+$User = '';
+$login = false;
+
 if (isset($_POST['email'])) {
 
     $sql_li_stmt = "Select email, password "
@@ -21,16 +25,18 @@ if (isset($_POST['email'])) {
         echo 'Password is valid!';  
         $_SESSION['LoginStatus'] = true;
         $Status = 'Logoff ' . $_POST['email'];
-        $loginStatus = true;
+        $login = true;
+        $User = $_POST['email'];
         
-        if($_POST['email'] = 'admin@gmail.com'){
+        if($_POST['email'] == 'admin@gmail.com'){
             $Admin = true;
             $Status = 'Logoff ' . $_POST['email'];    
         }
         
     } else {
         echo 'Invalid password.';
-        $loginStatus = false;
+        $login = false;
+        $Admin = false;
     }
 }
 ?>

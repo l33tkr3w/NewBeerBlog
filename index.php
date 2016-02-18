@@ -3,6 +3,7 @@ require('host.php');
 require('login.php');
 require('user_registration.php');
 require('createPost.php');
+echo($User);
 ?>
 
 
@@ -97,7 +98,7 @@ require('createPost.php');
                         </ul>  
 
                         <?php
-                        if (isset($_POST['firstname'])) {
+                        if (isset($_POST['email'])) {
                             echo('<ul class="nav navbar-nav">
 
                         <li class="dropdown">
@@ -109,6 +110,8 @@ require('createPost.php');
                                     <textarea class="FormElement" name="textContent" name="textContent "id="textContent" cols="36" rows="7" placeholder="Article Text"></textarea>
                                     <input type="text" class="form-control" name="image" id="image" placeholder="Enter an Image URL">
                                     <button type="submit" class="btn btn-theme btn-block">Post</button>
+                                    <input type="hidden" class="form-control" name="email" id="image" value="' . $_POST['email'] . '">
+                                    <input type="hidden" class="form-control" name="removable" id="image" value="' . $_POST['email'] . '">
                                     </form>
                                 </li>                                  
                             </ul>
@@ -116,14 +119,13 @@ require('createPost.php');
                         </ul>  
                     </ul>');
                         }
+                        
                         ?>
 
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <?php
-                                if (isset($_POST['firstname'])) {
-                                    
-                                } else if ($loginStatus = true) {
+                                if ($login != true) {
                                     echo('<ul class="nav navbar-nav">
 
                         <li class="dropdown">
@@ -134,6 +136,7 @@ require('createPost.php');
                                     <input type="text" class="form-control" name="email" id="email" placeholder="Email Address" required />
                                     <input type="text" class="form-control" name="password" id="password" placeholder="Password">                                  
                                     <button type="submit" class="btn btn-theme btn-block">Login</button>
+                                    <input type="hidden" class="form-control" name="email" id="email" value="">
                                     </form>
                                 </li>                                  
                             </ul>
@@ -151,16 +154,16 @@ require('createPost.php');
                                 
                                 <!--SET STATUS OF USER, SIGNED IN OR OUT-->
                                 <?php
-                                if($loginStatus = true){
+                                if($login == true){
                                     echo('<a href="" class="dropdown-toggle" action="index.php" id="registerBttn" data-toggle="dropdown">' . $Status . '<span class="caret"></span></a>');
                                 }else{
-                                    echo('<a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown">' . $Status . '<span class="caret"></span></a>');
+                                    echo('<a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown">Register<span class="caret"></span></a>');
                                 }
                                 ?>
                                 
                                 <!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
                                 <?php
-                                if (isset($_POST['firstname'])) {
+                                if ($login == true) {
                                     
                                 } else {
 

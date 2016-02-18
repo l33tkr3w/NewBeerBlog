@@ -1,6 +1,7 @@
 <?php
 
 if (isset($_POST['textContent'])) {
+    
 
     //create sql statement
     $sql_stmt = "INSERT INTO tbl_Articles "
@@ -32,6 +33,7 @@ if (isset($_POST['textContent'])) {
     $sqlh->bindparam(":textContent", $in_textContent);
     $sqlh->bindparam(":image", $in_image);
     $sqlh->bindparam(":removable", $in_removable);
+    $in_email = $User;
 
     //excecute the sqlstatement
     $sqlh->execute();
