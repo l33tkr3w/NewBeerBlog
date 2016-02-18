@@ -3,7 +3,7 @@ require('host.php');
 require('login.php');
 require('user_registration.php');
 require('createPost.php');
-echo($User);
+
 ?>
 
 
@@ -46,6 +46,8 @@ echo($User);
     </script>
 
     <body>
+        
+        
 
         <!-- NAVBAR -->
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -125,7 +127,7 @@ echo($User);
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <?php
-                                if ($login != true) {
+                                if (!isset($_POST['email'])) {
                                     echo('<ul class="nav navbar-nav">
 
                         <li class="dropdown">
@@ -144,6 +146,7 @@ echo($User);
                         </ul>  
                     </ul>');
                                 }
+                                
                                 ?>
 
                             </li>
@@ -154,19 +157,17 @@ echo($User);
                                 
                                 <!--SET STATUS OF USER, SIGNED IN OR OUT-->
                                 <?php
-                                if($login == true){
-                                    echo('<a href="" class="dropdown-toggle" action="index.php" id="registerBttn" data-toggle="dropdown">' . $Status . '<span class="caret"></span></a>');
-                                }else{
+                                if (!isset($_POST['email'])) {
                                     echo('<a href="" class="dropdown-toggle" id="registerBttn" data-toggle="dropdown">Register<span class="caret"></span></a>');
+                                }else{
+                                    echo('<a href="index.php" class="btn btn-success" role="button">Logoff</a>');
+                                    echo('');
                                 }
                                 ?>
                                 
                                 <!--HIDE REGISTER BUTTON AND FORM ONCE LOGGED IN-->
                                 <?php
-                                if ($login == true) {
-                                    
-                                } else {
-
+                                if (!isset($_POST['email'])) {
                                     echo('<ul id="login-dp" class="dropdown-menu">
                                 <li>
                                     <div class="row">
@@ -236,6 +237,9 @@ echo($User);
                                         </div>
                                 </li>
                             </ul>');
+                                }else{
+                                    echo('');
+                                    
                                 }
                                 ?>
                             </li>

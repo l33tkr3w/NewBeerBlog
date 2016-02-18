@@ -1,10 +1,8 @@
 <?php
-
-//default register button title
-$Status = 'Logoff ' . $_POST['email'];
+$Status = 'Register';
 $Admin = false;
 $User = '';
-$login = false;
+//$login = false;
 
 if (isset($_POST['email'])) {
 
