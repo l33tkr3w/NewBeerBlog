@@ -12,6 +12,17 @@ Fixed User registration | 1 hour
 Fixed Login Button | 1
 Implemented Create post button functionality | 1
 
+Recreated Database to work properly, 2 tables now | 1
+Implemented USER Delete post functionality | 1
+Implemented ADMIN Delete post functionality | 1
+
+Fixed buttons on navbar | 2
+
+TROUBLESHOOTING | 5 HOURS
+Currently need to fix "invalid password" | 1 hour estimated
+Need Delete button DELETE STATEMENT FROM DB | 1 hour estimated
+
+
 ________________________________________________________________________________
 
 
